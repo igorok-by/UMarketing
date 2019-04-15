@@ -2,28 +2,76 @@
 /*Global variables
 ------------------------------------------------*/
 
-$light-blue: #e1f4ff;
-$sky-blue: #71bfff;
-$deep-blue: #006bcc;
+// Font
+$mainFont                : 'Roboto', Helvetica, Arial, sans-serif;
 
-$sm: 576px;
-$lg: 992px;
+// Size
+$mainFontColor           : #333333;
+$mainFontSize            : 16px;
+$mainFontWeight          : 400;
+$mainLineHeight          : 1.4;
+
+$desktopWidth            : 1280px;
+$smDesktopWidth          : 960px;
+$tableWidth              : 768px;
+$phoneWidth              : 480px;
+$smPhoneWidth            : 320px;
+
+// Main color
+$default-color           : #ffffff;
+$primary-color           : #444ce0;
+$success-color           : #26de81;
+$danger-color            : #fc5c65;
+$warning-color           : #fed330;
+$light-color             : #999999;
+$purple-color            : #8854d0;
+
+// Neutral Color
+$neutral-primary         : #303133;
+$neutral-regular         : #606266;
+$neutral-secondary       : #909399;
+$neutral-placeholder     : #C0C4CC;
+
+// Border Color
+$border-base             : #DCDFE6;
+$border-light            : #E4E7ED;
+$border-lighter          : #EBEEF5;
+$border-lightex          : #F2F6FC;
+
+
+/* MIXINS
+-------------------------------------------------- */
+
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
 
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
+html,
 body {
 	margin: 0;
-	font-family: SegoeUI, sans-serif;
-	font-size: 16px;
-	font-weight: normal;
+	padding-top: rem(36);
+	font-family: $mainFont;
+	font-size: $mainFontSize;
+	font-weight: $mainFontWeight;
 	font-style: normal;
 	font-stretch: normal;
-	line-height: 1.31;
+	line-height: $mainLineHeight;
 	letter-spacing: normal;
 	text-align: left;
-	color: #000;
+	color: $mainFontColor;
 }
 
 h1,
@@ -33,9 +81,9 @@ h2 {
 	font-weight: bold;
 	line-height: 1.32;
 
-	@media (min-width: $sm) { margin-left: 40px; }
+	// @media (min-width: $sm) { margin-left: 40px; }
 
-	@media (min-width: $lg) { margin-left: 0; }
+	// @media (min-width: $lg) { margin-left: 0; }
 }
 
 /* BLUEBOX

@@ -1,18 +1,22 @@
 /*Global variables
 ------------------------------------------------*/
+/* MIXINS
+-------------------------------------------------- */
 /* GLOBAL STYLES
 -------------------------------------------------- */
+html,
 body {
   margin: 0;
-  font-family: SegoeUI, sans-serif;
+  padding-top: 2.25rem;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.31;
+  line-height: 1.4;
   letter-spacing: normal;
   text-align: left;
-  color: #000; }
+  color: #333333; }
 
 h1,
 h2 {
@@ -20,14 +24,6 @@ h2 {
   font-size: 25px;
   font-weight: bold;
   line-height: 1.32; }
-  @media (min-width: 576px) {
-    h1,
-    h2 {
-      margin-left: 40px; } }
-  @media (min-width: 992px) {
-    h1,
-    h2 {
-      margin-left: 0; } }
 
 /* BLUEBOX
 ---------------------------------------*/
