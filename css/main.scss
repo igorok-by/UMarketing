@@ -1,0 +1,43 @@
+
+/*Global variables
+------------------------------------------------*/
+
+$light-blue: #e1f4ff;
+$sky-blue: #71bfff;
+$deep-blue: #006bcc;
+
+$sm: 576px;
+$lg: 992px;
+
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+
+body {
+	margin: 0;
+	font-family: SegoeUI, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.31;
+	letter-spacing: normal;
+	text-align: left;
+	color: #000;
+}
+
+h1,
+h2 {
+	margin-left: .8em;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 1.32;
+
+	@media (min-width: $sm) { margin-left: 40px; }
+
+	@media (min-width: $lg) { margin-left: 0; }
+}
+
+/* BLUEBOX
+---------------------------------------*/
+
