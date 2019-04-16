@@ -19,6 +19,7 @@ $smPhoneWidth            : 320px;
 
 // Main color
 $primary-color           : #EDF4F9;
+$success-color           : #F6FDFA;
 $warning-color           : #CCDFE3;
 
 // Border Color
@@ -56,13 +57,27 @@ body {
 	letter-spacing: normal;
 	text-align: left;
 	color: $mainFontColor;
+
+	@media screen and (max-width: $desktopWidth) {
+		font-size: 18px;
+	}
+	
+	@media screen and (max-width: $smDesktopWidth) {
+		font-size: 16px;
+	}
+
+	@media screen and (max-width: $tableWidth) {
+		font-size: 15px;
+	}
+
+	@media screen and (max-width: $phoneWidth) {
+		font-size: 14px;
+	}
 }
 
-body { padding-top: rem(36) }
+body { padding: rem(36) 0 }
 
-h1, h2, p {
-	margin: 0;
-}
+h1, h2, p { margin: 0 }
 
 
 /* GRID
@@ -73,6 +88,10 @@ h1, h2, p {
 	max-width: 960px;
 	margin: 0 auto;
 	background-color: $primary-color;
+
+	@media screen and (max-width: $tableWidth) {
+		padding-right: rem(40);
+	}
 }
 
 .grid {
@@ -84,6 +103,7 @@ h1, h2, p {
 		justify-content: flex-start;
 	}
 	
+	// Main heading
 	&__title {
 		padding-bottom: rem(58);
 		font-weight: bold;
@@ -93,6 +113,10 @@ h1, h2, p {
 
 	&__part:not(:last-child) {
 		padding-right: rem(50);
+
+		@media screen and (max-width: $tableWidth) {
+			padding-right: 0;
+		}
 	}
 }
 
@@ -101,40 +125,67 @@ h1, h2, p {
 ---------------------------------------*/
 
 .item {
-	border-bottom: 1px solid $border-base; 
+	border-bottom: 1px solid $border-base;
+	
+	&--active {
+		background-color: $warning-color;
+	}
 
 	&__wrap {
 		display: flex;
 		justify-content: space-between;
 		padding-top: rem(24);
 		padding-bottom: rem(20);
+		cursor: pointer;
+		transition: all .3s ease-in-out;
 	}
+
+	&__wrap:hover {
+		background-color: $warning-color;
+	}	
 
 	&__quest {
 		display: flex;
 	}
 
+	// Logo before question	
 	&__logo {
 		width: rem(21);
 		height: rem(21);
 		padding-right: rem(8);
+		padding-left: rem(7);
 	}
 
-	&__descr {
-		
-	}
+	&__descr { }
 
+	// Arrow sign at right
 	&__sign {
 		width: rem(11);
 		height: rem(6);
 		padding-top: rem(8);
+		padding-right: rem(15);
 		padding-left: rem(10);
 	}
+	
+	&__sign--rotate {
+		transform: rotate(180deg);
+		padding-top: 0;
+		padding-bottom: rem(8);
+		padding-right: rem(10);
+		padding-left: rem(15);
+	}
 
+	// Normally hidden answer
 	&__text {
 		max-height: 0;
 		padding: 0 rem(10);
 		overflow: hidden;
-		background-color: $warning-color;
+		background-color: $success-color;
+		transition: all .3s ease-in-out;
+	}
+
+	&__text--open {
+		padding-top: rem(15);
+		padding-bottom: rem(15);
 	}
 }
