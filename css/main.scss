@@ -18,25 +18,11 @@ $phoneWidth              : 480px;
 $smPhoneWidth            : 320px;
 
 // Main color
-$default-color           : #ffffff;
-$primary-color           : #444ce0;
-$success-color           : #26de81;
-$danger-color            : #fc5c65;
-$warning-color           : #fed330;
-$light-color             : #999999;
-$purple-color            : #8854d0;
-
-// Neutral Color
-$neutral-primary         : #303133;
-$neutral-regular         : #606266;
-$neutral-secondary       : #909399;
-$neutral-placeholder     : #C0C4CC;
+$primary-color           : #EDF4F9;
+$warning-color           : #CCDFE3;
 
 // Border Color
-$border-base             : #DCDFE6;
-$border-light            : #E4E7ED;
-$border-lighter          : #EBEEF5;
-$border-lightex          : #F2F6FC;
+$border-base             : #C6C6C6;
 
 
 /* MIXINS
@@ -55,14 +41,12 @@ $border-lightex          : #F2F6FC;
 }
 
 
-
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
 html,
 body {
 	margin: 0;
-	padding-top: rem(36);
 	font-family: $mainFont;
 	font-size: $mainFontSize;
 	font-weight: $mainFontWeight;
@@ -74,18 +58,83 @@ body {
 	color: $mainFontColor;
 }
 
-h1,
-h2 {
-	margin-left: .8em;
-	font-size: 25px;
-	font-weight: bold;
-	line-height: 1.32;
+body { padding-top: rem(36) }
 
-	// @media (min-width: $sm) { margin-left: 40px; }
-
-	// @media (min-width: $lg) { margin-left: 0; }
+h1, h2, p {
+	margin: 0;
 }
 
-/* BLUEBOX
+
+/* GRID
 ---------------------------------------*/
 
+.wrap {
+	padding: rem(53) rem(20) rem(62) rem(40);
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: $primary-color;
+}
+
+.grid {
+	display: flex;
+	justify-content: center;
+	
+	@media screen and (max-width: $tableWidth) {
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	&__title {
+		padding-bottom: rem(58);
+		font-weight: bold;
+		font-size: rem(20);
+		text-transform: uppercase;
+	}
+
+	&__part:not(:last-child) {
+		padding-right: rem(50);
+	}
+}
+
+
+/* ITEM
+---------------------------------------*/
+
+.item {
+	border-bottom: 1px solid $border-base; 
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		padding-top: rem(24);
+		padding-bottom: rem(20);
+	}
+
+	&__quest {
+		display: flex;
+	}
+
+	&__logo {
+		width: rem(21);
+		height: rem(21);
+		padding-right: rem(8);
+	}
+
+	&__descr {
+		
+	}
+
+	&__sign {
+		width: rem(11);
+		height: rem(6);
+		padding-top: rem(8);
+		padding-left: rem(10);
+	}
+
+	&__text {
+		max-height: 0;
+		padding: 0 rem(10);
+		overflow: hidden;
+		background-color: $warning-color;
+	}
+}
