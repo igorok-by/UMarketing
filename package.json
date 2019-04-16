@@ -8,14 +8,17 @@
     "lite": "lite-server",
     "scss": "node-sass -o css/ css/",
     "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
-    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
+    "build": "postcss css/main.css -u autoprefixer -d css/"
   },
   "author": "Igor B",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "lite-server": "^2.4.0",
     "node-sass": "^4.11.0",
     "onchange": "^5.2.0",
-    "parallelshell": "^3.0.2"
+    "parallelshell": "^3.0.2",
+    "postcss-cli": "^6.1.2"
   }
 }
